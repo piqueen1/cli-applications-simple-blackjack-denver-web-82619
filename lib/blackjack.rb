@@ -33,12 +33,13 @@ end
 def hit?(current_total)
   prompt_user
   user_input = get_user_input
-  get_user_input
   #binding.pry
   if user_input = "h"
     current_total += deal_card
+  else 
+    if user_input = "s"
+      return current_total
   else
-    if user_input != "s"
       invalid_command
   end
   
@@ -68,4 +69,3 @@ def runner
 end
 
 end
-    
