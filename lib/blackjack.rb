@@ -38,6 +38,8 @@ def hit?(current_total)
     if user_input != "s"
       invalid_command
     end
+    
+    current_total
   end
   
   current_total
