@@ -54,6 +54,7 @@ end
 # get every test to pass before coding runner below #
 #####################################################
 
+=begin
 def runner
   welcome
   initial_round
@@ -67,5 +68,6 @@ def runner
   
   end_game
 end
+=end
 
 end
