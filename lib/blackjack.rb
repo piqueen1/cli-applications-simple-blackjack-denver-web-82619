@@ -36,8 +36,7 @@ def hit?(current_total)
   #binding.pry
   if user_input = "h"
     current_total += deal_card
-  else 
-    if user_input = "s"
+  elsif user_input = "s"
       return current_total
   else
       invalid_command
@@ -69,5 +68,3 @@ def runner
   end_game
 end
 =end
-
-end
