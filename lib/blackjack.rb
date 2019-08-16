@@ -36,12 +36,13 @@ def hit?(current_total)
   #binding.pry
   if user_input = "h"
     current_total += deal_card
+    #binding.pry
   elsif user_input = "s"
       return current_total
   else
       invalid_command
   end
-  
+  binding.pry
   current_total
 end
 
