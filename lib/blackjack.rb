@@ -41,8 +41,9 @@ def hit?(current_total)
       return current_total
   else
       invalid_command
+      user_input = get_user_input
   end
-  binding.pry
+  #binding.pry
   current_total
 end
 
