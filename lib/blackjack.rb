@@ -34,14 +34,17 @@ def hit?(current_total)
   prompt_user
   user_input = get_user_input
   #binding.pry
-  if user_input = "h"
-    current_total += deal_card
-    #binding.pry
-  elsif user_input = "s"
-      return current_total
-  else
-      invalid_command
-      user_input = get_user_input
+
+  while !user_input.includes?("h", "s") do
+    if user_input = "h"
+      current_total += deal_card
+      #binding.pry
+    elsif user_input = "s"
+        return current_total
+    else
+        invalid_command
+        user_input = get_user_input
+    end
   end
   #binding.pry
   current_total
