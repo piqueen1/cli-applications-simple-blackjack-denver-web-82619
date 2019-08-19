@@ -35,7 +35,7 @@ def hit?(current_total)
   user_input = get_user_input
   #binding.pry
 
-  while !user_input.includes?("h", "s") do
+  while current_total <= 21 do
     if user_input = "h"
       current_total += deal_card
       #binding.pry
