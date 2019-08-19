@@ -31,19 +31,21 @@ def initial_round
 end
 
 def hit?(current_total)
-  while current_total <= 21 do
     prompt_user
     user_input = get_user_input
+ 
+  while current_total <= 21 do
     if user_input = "h"
       current_total += deal_card
       #binding.pry
     elsif user_input = "s"
         return current_total
     else
-        invalid_command
-        user_input = get_user_input
+      invalid_command
+      user_input = get_user_input
     end
   end
+  
   #binding.pry
   current_total
 end
