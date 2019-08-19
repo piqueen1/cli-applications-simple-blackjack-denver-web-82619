@@ -33,14 +33,17 @@ end
 def hit?(current_total)
     prompt_user
     user_input = get_user_input
- 
   while current_total <= 21 do
     if user_input = "h"
+      puts "#{user_input} for h"
       current_total += deal_card
+      puts "#{current_total} for after deal_card"
       #binding.pry
     elsif user_input = "s"
+    puts "#{user_input} for s"
         return current_total
     else
+      puts "#{current_total} for invalid"
       invalid_command
       user_input = get_user_input
     end
