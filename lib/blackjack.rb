@@ -17,7 +17,7 @@ def prompt_user
 end
 
 def get_user_input
-  gets
+ gets
 end
 
 def end_game(card_total)
@@ -30,32 +30,34 @@ def initial_round
   return total
 end
 
+def invalid_command
+  puts "Please enter a valid command"
+end
+
 def hit?(current_total)
     prompt_user
     user_input = get_user_input
-  while current_total <= 21 do
-    if user_input = "h"
-      puts "#{user_input} for h"
+  
+  loop do
+    if user_input == "h\n" || user_input == "h"
       current_total += deal_card
-      puts "#{current_total} for after deal_card"
-      #binding.pry
-    elsif user_input = "s"
-    puts "#{user_input} for s"
-        return current_total
+      return current_total
+    elsif user_input == "s\n" || user_input == "s"
+      return current_total
     else
-      puts "#{current_total} for invalid"
       invalid_command
       user_input = get_user_input
     end
+    
+    break if current_total >= 21 
   end
   
   #binding.pry
   current_total
 end
+hit? rand(1..11)
 
-def invalid_command
-  puts "Please enter a valid command"
-end
+
 
 #####################################################
 # get every test to pass before coding runner below #
