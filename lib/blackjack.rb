@@ -50,7 +50,7 @@ def hit?(current_total)
       user_input = get_user_input
     end
     
-    break if current_total >= 21 
+    break if current_total > 21 
   end
   
   #binding.pry
@@ -62,7 +62,6 @@ end
 # get every test to pass before coding runner below #
 #####################################################
 
-=begin
 def runner
   welcome
   initial_round
@@ -76,4 +75,3 @@ def runner
   
   end_game
 end
-=end
