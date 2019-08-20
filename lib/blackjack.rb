@@ -55,8 +55,6 @@ def hit?(current_total)
   #binding.pry
   current_total
 end
-hit? rand(1..11)
-
 
 
 #####################################################
