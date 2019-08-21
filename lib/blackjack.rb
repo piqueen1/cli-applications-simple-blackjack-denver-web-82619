@@ -34,30 +34,26 @@ def invalid_command
   puts "Please enter a valid command"
 end
 
-def hit?(current_total)
+def hit?(card_total)
   prompt_user
   user_input = get_user_input
   #binding.pry
   
   if user_input == "h\n" || user_input == "h"
     #binding.pry
-    current_total += deal_card
+    card_total += deal_card
      #binding.pry
-    display_card_total(current_total)
-    return current_total
+    display_card_total(card_total)
+    return card_total
   elsif user_input == "s\n" || user_input == "s"
-    display_card_total(current_total)
-    return current_total
+    return card_total
   else
     invalid_command
     #binding.pry
     prompt_user
-    display_card_total(current_total)
     user_input = get_user_input
+    return card_total
   end
-
-  #binding.pry
-  end_game(current_total)
 end
 
 #####################################################
@@ -69,9 +65,10 @@ def runner
   card_total = initial_round
   
   until card_total > 21 do
-    hit?(card_total)
-    display_card_total(card_total)
+    card_total = hit?(card_total)
   end
   
-  end_game
+  end_game(card_total)
 end
+
+#runner
