@@ -35,31 +35,30 @@ def invalid_command
 end
 
 def hit?(current_total)
+  prompt_user
+  user_input = get_user_input
+  #binding.pry
+  
+  if user_input == "h\n" || user_input == "h"
+    #binding.pry
+    current_total += deal_card
+     #binding.pry
+    display_card_total(current_total)
+    return current_total
+  elsif user_input == "s\n" || user_input == "s"
+    display_card_total(current_total)
+    return current_total
+  else
+    invalid_command
+    #binding.pry
     prompt_user
+    display_card_total(current_total)
     user_input = get_user_input
-  
-  loop do
-    if user_input == "h\n" || user_input == "h"
-      current_total += deal_card
-      display_card_total(current_total)
-      return current_total
-    elsif user_input == "s\n" || user_input == "s"
-      display_card_total(current_total)
-      return current_total
-    else
-      invalid_command
-      prompt_user
-      display_card_total(current_total)
-      user_input = get_user_input
-    end
-    
-    break if current_total > 21 
   end
-  
+
   #binding.pry
   end_game(current_total)
 end
-
 
 #####################################################
 # get every test to pass before coding runner below #
