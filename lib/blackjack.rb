@@ -41,12 +41,15 @@ def hit?(current_total)
   loop do
     if user_input == "h\n" || user_input == "h"
       current_total += deal_card
+      display_card_total(current_total)
       return current_total
     elsif user_input == "s\n" || user_input == "s"
+      display_card_total(current_total)
       return current_total
     else
       invalid_command
       prompt_user
+      display_card_total(current_total)
       user_input = get_user_input
     end
     
@@ -54,7 +57,7 @@ def hit?(current_total)
   end
   
   #binding.pry
-  current_total
+  end_game(current_total)
 end
 
 
@@ -64,13 +67,11 @@ end
 
 def runner
   welcome
-  initial_round
-  hit?(initial_round)
-  display_card_total
+  card_total = initial_round
   
-  while card_total < 21 do
-    hit?
-    display_card_total
+  until card_total > 21 do
+    hit?(card_total)
+    display_card_total(card_total)
   end
   
   end_game
